@@ -1,0 +1,177 @@
+/* Estilos para o sistema de órbitas tecnológicas */
+
+.orbit-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 2px solid rgba(56, 182, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit-rotation linear infinite;
+}
+
+.tech-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--dark-light);
+  box-shadow: 0 0 20px rgba(56, 182, 255, 0.7);
+  transform-origin: center;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  animation: tech-bob 3s ease-in-out infinite;
+  z-index: 10;
+}
+
+.tech-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 5px rgba(56, 182, 255, 0.8));
+}
+
+.tech-icon i {
+  font-size: 32px;
+  filter: drop-shadow(0 0 5px rgba(56, 182, 255, 0.8));
+}
+
+/* Animação de órbita */
+@keyframes orbit-rotation {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Animação de flutuação para os ícones */
+@keyframes tech-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Estilos para órbitas individuais */
+.orbit-1 {
+  width: 500px;
+  height: 300px;
+  animation-duration: 25s;
+  animation-direction: normal;
+}
+
+.orbit-2 {
+  width: 650px;
+  height: 380px;
+  animation-duration: 35s;
+  animation-direction: reverse;
+}
+
+.orbit-3 {
+  width: 800px;
+  height: 460px;
+  animation-duration: 45s;
+  animation-direction: normal;
+}
+
+/* Animação ao passar o mouse por cima */
+.tech-icon:hover {
+  transform: scale(1.4);
+  background-color: var(--primary);
+  z-index: 20;
+  box-shadow: 0 0 30px var(--primary);
+}
+
+/* Tooltip para mostrar o nome da tecnologia */
+.tech-tooltip {
+  position: absolute;
+  background-color: var(--dark-light);
+  color: var(--text);
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.507);
+}
+
+.tech-icon:hover .tech-tooltip {
+  opacity: 1;
+}
+
+/* Otimizações para dispositivos móveis */
+@media (max-width: 768px) {
+  .orbit-container {
+    display: none !important;
+  }
+
+  .orbit,
+  .tech-icon {
+    display: none !important;
+  }
+}
+
+/* Ajustes para telas médias */
+@media (max-width: 1200px) {
+  .tech-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .tech-icon i {
+    font-size: 28px;
+  }
+
+  .orbit-1 {
+    width: 450px;
+    height: 280px;
+  }
+
+  .orbit-2 {
+    width: 580px;
+    height: 340px;
+  }
+
+  .orbit-3 {
+    width: 700px;
+    height: 400px;
+  }
+}
+
+/* Ajustes para telas de baixa altura */
+@media (max-height: 800px) {
+  .orbit-1 {
+    animation-duration: 20s;
+  }
+
+  .orbit-2 {
+    animation-duration: 30s;
+  }
+
+  .orbit-3 {
+    animation-duration: 40s;
+  }
+}
