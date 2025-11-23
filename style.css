@@ -31,7 +31,6 @@ body {
   display: flex;
 }
 
-
 /* ======================== TÍTULOS ======================== */
 h2 {
   padding: 40px 4%;
@@ -170,7 +169,6 @@ section.topo-do-site .flex {
   position: relative;
 }
 
-
 /* Botão do topo */
 .topo-do-site .site-btn button {
   padding: 10px 40px;
@@ -210,7 +208,6 @@ section.topo-do-site .flex {
   transform: scale(1.2);
   color: #12ad58;
 }
-
 
 /* ======================== FUNDO GEOMÉTRICO ======================== */
 .geometric-background {
@@ -309,7 +306,6 @@ section.topo-do-site .flex {
     transform: translateX(-100px) rotate(360deg);
   }
 }
-
 
 /* Partículas */
 .particles {
@@ -638,6 +634,8 @@ section.sobre {
 
 /* Projetos */
 
+/* Projetos */
+
 .projetos {
   position: relative;
   display: flex;
@@ -647,89 +645,70 @@ section.sobre {
   flex-direction: column;
 }
 
-.projetos .image-1 {
-  position: relative;
-  width: 800px;
-  height: 400px;
-  overflow: hidden;
+.projetos .interface {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4%;
 }
 
-.projetos .image-1 img {
-  z-index: 111;
+.projetos .flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 20px;
+}
+
+.img-port {
+  background-color: #00ff0d;
+  width: 300px;
+  height: 250px;
+  background-size: cover;
+  background-position: 100% 0%;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.img-port:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px rgba(18, 173, 88, 0.7);
+  z-index: 10;
+}
+
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   border-radius: 10px;
-}
-
-.projetos .text-box {
-  z-index: 222;
-  background: #12ad58b4;
-  backdrop-filter: blur(20px);
-  padding: 40px;
-  max-width: 400px;
-  border: 1px solid rgba(255, 255, 255, 0.164);
-  border-radius: 10px;
-  transform: translate(-80px, 50px);
-}
-
-.projetos .text-box h3 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  text-align: center;
-  color: #fff;
-}
-
-.projetos .text-box p {
-  color: #fff;
-  text-align: center;
-}
-
-.projet-icons {
-  margin-top: 100px;
-  text-align: center;
-}
-
-.projet-icons a {
-  margin: 0 10px;
-  font-size: 35px;
-  color: #fff;
-  transition: transform 0.3s, color 0.3s;
-}
-
-.projet-icons a:hover {
-  color: #12ad58;
-  transform: scale(1.2);
-}
-
-.projeto-02 {
-  padding: 80px 4%;
-  color: #fff;
-}
-
-.projeto-02 .interface {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.projeto-02 .flex {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-}
-
-.text-box-02 {
-  width: 100%;
-}
-
-.text-box-02 .text-title {
-  font-size: 36px;
-  margin-bottom: 30px;
-  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  background-color: #242525d5;
   color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+/* Responsividade para a seção de Projetos */
+@media (max-width: 992px) {
+  .img-port {
+    width: calc(50% - 15px);
+  }
+}
+
+@media (max-width: 576px) {
+  .img-port {
+    width: 100%;
+  }
 }
 
 /* Bloco com imagem e descrição lado a lado */
@@ -910,6 +889,14 @@ section.sobre {
 .form-box button:hover {
   background-color: #eff0ff;
   color: #12ad58;
+}
+
+#statusForm {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin-left: 150px;
 }
 
 /* rodapé */

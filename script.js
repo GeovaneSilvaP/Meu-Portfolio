@@ -177,3 +177,37 @@ ScrollReveal().reveal(".media-info li, ", {
   origin: "left",
   interval: 200,
 });
+
+//Formulario
+function myForm() {
+  const formForm = document.getElementById("formForm");
+
+  formForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formEmail = document.getElementById("formEmail").value;
+    const nameName = document.getElementById("nameName").value;
+    const statusForm = document.getElementById("statusForm");
+
+    if (!nameName || !formEmail) {
+      statusForm.textContent = "⚠️ Preencha todos os campos!";
+      statusForm.style.color = "orange";
+      return;
+    }
+
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!regex.test(formEmail)) {
+      statusForm.textContent = "❌ E-mail inválido!";
+      statusForm.style.color = "red";
+      return;
+    }
+
+    statusForm.textContent = "✅ Formulário enviado com sucesso!";
+    statusForm.style.color = "limegreen";
+
+    formForm.reset();
+  });
+}
+
+myForm();
