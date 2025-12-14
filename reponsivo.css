@@ -1,0 +1,306 @@
+/* Responsividade Geral */
+@media (max-width: 1200px) {
+  .interface,
+  .projeto-02 .interface {
+    padding: 0 20px;
+  }
+
+  #container-imgs {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  nav .navegador ul li {
+    padding: 0 20px;
+  }
+
+  .topo-do-site #img-perfil img {
+    width: 400px;
+    height: auto;
+  }
+
+  .projetos .image-1,
+  .projetos .text-box {
+    width: 90%;
+    transform: none;
+  }
+
+  .container-sobre .cards {
+    width: 90%;
+    height: auto;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .image-3 img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  h2,
+  .especialidade .titulos,
+  section .text-sobre h2 {
+    font-size: 36px;
+  }
+
+  #txt-top-site h1,
+  .topo-do-site #txt-top-site p {
+    font-size: 30px;
+  }
+
+  .topo-do-site .flex,
+  .especialidade .flex,
+  .container-sobre,
+  .content-img,
+  .content,
+  .projeto-02 .flex {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .topo-do-site #img-perfil img {
+    width: 300px;
+    height: auto;
+  }
+
+  #container-imgs img {
+    width: 100px;
+  }
+
+  .form-box {
+    width: 90%;
+  }
+
+  .form-box input {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  nav .navegador ul li {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .social-icons {
+    gap: 20px;
+    font-size: 1.5rem;
+  }
+
+  .topo-do-site #txt-top-site p span {
+    font-size: 36px;
+  }
+
+  .container-sobre .cards {
+    margin: 10px 0;
+  }
+
+  .projetos .image-1 {
+    height: auto;
+  }
+
+  .image-2 img,
+  .image-3 img {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .media-info li {
+    font-size: 1.1rem;
+    padding-left: 0 !important;
+  }
+
+  .form-box h2 {
+    font-size: 20px;
+  }
+
+  .input_group button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  h2,
+  .especialidade .titulos,
+  .section-title {
+    font-size: 28px;
+  }
+
+  .topo-do-site #txt-top-site h1,
+  .topo-do-site #txt-top-site p {
+    font-size: 22px;
+  }
+
+  .topo-do-site #txt-top-site p span {
+    font-size: 28px;
+  }
+
+  .form-box input,
+  .form-box textarea,
+  .form-box button {
+    font-size: 14px;
+  }
+
+  .form-box button {
+    width: 100%;
+  }
+}
+
+
+/* ======================== HABILIDADES TÉCNICAS - RESPONSIVO ======================== */
+
+@media (max-width: 992px) {
+  .icons-habilidades {
+    margin-left: 0 !important;   /* 🔥 remove o empurrão */
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .habilidades-tecnicas {
+    padding: 30px 15px;
+  }
+
+  .habilidades-tecnicas h3 {
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .icons-habilidades {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 25px;
+  }
+
+  .icone {
+    width: auto;
+  }
+
+  .icone i {
+    font-size: 36px;
+  }
+
+  .icone span {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .icons-habilidades {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .icone i {
+    font-size: 32px;
+  }
+
+  .icone span {
+    font-size: 12px;
+  }
+}
+
+/* ======================== SOBRE MIM - RESPONSIVO ======================== */
+
+/* Notebooks menores e tablets */
+@media (max-width: 992px) {
+  section.sobre {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 5%;
+    text-align: center;
+  }
+
+  .hero-content {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .hero-img-wrapper {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .hero-title h2 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+
+  .hero-paragrafo h2 {
+    font-size: 2rem;
+  }
+
+  .hero-paragrafo p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .profile-img {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 576px) {
+  section.sobre {
+    padding: 50px 4%;
+  }
+
+  .hero-title h2 {
+    font-size: 2rem;
+  }
+
+  .hero-paragrafo h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero-paragrafo p {
+    font-size: 0.95rem;
+  }
+
+  .profile-img {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+/* Celulares muito pequenos */
+@media (max-width: 400px) {
+  .hero-title h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero-paragrafo h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero-paragrafo p {
+    font-size: 0.9rem;
+  }
+
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+}

@@ -634,68 +634,120 @@ section.sobre {
 
 /* Projetos */
 
-/* Projetos */
+/* ======================== SEÇÃO PROJETOS ======================== */
 
 .projetos {
+  padding: 80px 4%;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-  flex-direction: column;
 }
 
 .projetos .interface {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 4%;
 }
 
-.projetos .flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  row-gap: 20px;
-}
-
-.img-port {
-  background-color: #00ff0d;
-  width: 300px;
-  height: 250px;
-  background-size: cover;
-  background-position: 100% 0%;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-}
-
-.img-port:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 0px 20px rgba(18, 173, 88, 0.7);
-  z-index: 10;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: 600;
-  background-color: #242525d5;
+.projetos .titulo {
+  font-size: 48px;
   color: #fff;
-  cursor: pointer;
-  opacity: 0;
-  transition: 0.5s;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
-.overlay:hover {
+.projetos .titulo span {
+  color: #12ad58;
+}
+
+/* GRID DE PROJETOS */
+.projetos .flex {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* CARD DO PROJETO */
+.img-port {
+  width: 100%;
+  max-width: 340px;
+  height: 240px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.img-port::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.85)
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* HOVER DO CARD */
+.img-port:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 45px rgba(18, 173, 88, 0.45);
+}
+
+.img-port:hover::before {
   opacity: 1;
+}
+
+/* OVERLAY */
+.img-port .overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.img-port:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TEXTO DO PROJETO */
+.overlay {
+  gap: 10px;
+}
+
+.overlay a {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #12ad58;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.overlay a i {
+  font-size: 18px;
+}
+
+.overlay a:hover {
+  color: #db3030;
+  transform: translateX(5px);
 }
 
 /* Responsividade para a seção de Projetos */
@@ -993,164 +1045,4 @@ footer {
   font-size: 0.9rem;
   padding: 1rem;
   font-weight: 100;
-}
-
-/* Responsividade Geral */
-@media (max-width: 1200px) {
-  .interface,
-  .projeto-02 .interface {
-    padding: 0 20px;
-  }
-
-  #container-imgs {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (max-width: 992px) {
-  nav .navegador ul li {
-    padding: 0 20px;
-  }
-
-  .topo-do-site #img-perfil img {
-    width: 400px;
-    height: auto;
-  }
-
-  .projetos .image-1,
-  .projetos .text-box {
-    width: 90%;
-    transform: none;
-  }
-
-  .container-sobre .cards {
-    width: 90%;
-    height: auto;
-  }
-
-  .footer-content {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-
-  .image-3 img {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  h2,
-  .especialidade .titulos,
-  section .text-sobre h2 {
-    font-size: 36px;
-  }
-
-  #txt-top-site h1,
-  .topo-do-site #txt-top-site p {
-    font-size: 30px;
-  }
-
-  .topo-do-site .flex,
-  .especialidade .flex,
-  .container-sobre,
-  .content-img,
-  .content,
-  .projeto-02 .flex {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .topo-do-site #img-perfil img {
-    width: 300px;
-    height: auto;
-  }
-
-  #container-imgs img {
-    width: 100px;
-  }
-
-  .form-box {
-    width: 90%;
-  }
-
-  .form-box input {
-    width: 100% !important;
-    margin-right: 0 !important;
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 576px) {
-  nav .navegador ul li {
-    display: block;
-    padding: 10px 0;
-    text-align: center;
-  }
-
-  .social-icons {
-    gap: 20px;
-    font-size: 1.5rem;
-  }
-
-  .topo-do-site #txt-top-site p span {
-    font-size: 36px;
-  }
-
-  .container-sobre .cards {
-    margin: 10px 0;
-  }
-
-  .projetos .image-1 {
-    height: auto;
-  }
-
-  .image-2 img,
-  .image-3 img {
-    max-width: 90%;
-    height: auto;
-  }
-
-  .media-info li {
-    font-size: 1.1rem;
-    padding-left: 0 !important;
-  }
-
-  .form-box h2 {
-    font-size: 20px;
-  }
-
-  .input_group button {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 400px) {
-  h2,
-  .especialidade .titulos,
-  .section-title {
-    font-size: 28px;
-  }
-
-  .topo-do-site #txt-top-site h1,
-  .topo-do-site #txt-top-site p {
-    font-size: 22px;
-  }
-
-  .topo-do-site #txt-top-site p span {
-    font-size: 28px;
-  }
-
-  .form-box input,
-  .form-box textarea,
-  .form-box button {
-    font-size: 14px;
-  }
-
-  .form-box button {
-    width: 100%;
-  }
 }
