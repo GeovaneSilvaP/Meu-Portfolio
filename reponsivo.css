@@ -1,3 +1,11 @@
+/* BOTÃO HAMBÚRGUER */
+.menu-mobile-btn {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
 /* Responsividade Geral */
 @media (max-width: 1200px) {
   .interface,
@@ -158,12 +166,11 @@
   }
 }
 
-
 /* ======================== HABILIDADES TÉCNICAS - RESPONSIVO ======================== */
 
 @media (max-width: 992px) {
   .icons-habilidades {
-    margin-left: 0 !important;   /* 🔥 remove o empurrão */
+    margin-left: 0 !important; /* 🔥 remove o empurrão */
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
@@ -303,4 +310,52 @@
     width: 200px;
     height: 200px;
   }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .menu-mobile-btn {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1100;
+  }
+
+  .navegador {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.97);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+    z-index: 1000;
+  }
+
+  .navegador.active {
+    transform: translateY(0);
+  }
+
+  .navegador ul {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .navegador ul li {
+    padding: 0;
+  }
+
+  .navegador ul li a {
+    font-size: 1.6rem;
+  }
+}
+
+/* MENU ABERTO */
+.navegador.active {
+  display: flex;
 }

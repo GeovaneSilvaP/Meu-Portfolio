@@ -46,6 +46,31 @@ function eventDeClick() {
 
 eventDeClick();
 
+//Botão menu-mobile
+const menuMobileBtn = document.getElementById("menu-mobile-btn");
+const menuMobile = document.getElementById("menu-mobile");
+
+menuMobileBtn.addEventListener("click", () => {
+  menuMobile.classList.toggle("active");
+
+  menuMobileBtn.innerHTML = menuMobile.classList.contains("active")
+    ? '<i class="bi bi-x"></i>'
+    : '<i class="bi bi-list"></i>';
+
+  document.body.style.overflow =
+    menuMobile.classList.contains("active") ? "hidden" : "auto";
+});
+
+// Fecha ao clicar em um link
+document.querySelectorAll(".navegador a").forEach(link => {
+  link.addEventListener("click", () => {
+    menuMobile.classList.remove("active");
+    menuMobileBtn.innerHTML = '<i class="bi bi-list"></i>';
+    document.body.style.overflow = "auto";
+  });
+});
+
+
 // Criar formas geométricas
 function createShapes() {
   const background = document.getElementById("geometric-background");
